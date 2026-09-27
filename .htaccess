@@ -1,0 +1,45 @@
+# Costa Dourada — comportamento de produção (Hostinger / Apache)
+
+AddDefaultCharset UTF-8
+
+# ---------- compressão ----------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json image/svg+xml
+  AddOutputFilterByType DEFLATE font/woff2 font/woff
+</IfModule>
+
+# ---------- cache ----------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html                 "access plus 0 seconds"
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType font/woff2                "access plus 1 year"
+  ExpiresByType video/mp4                 "access plus 6 months"
+  ExpiresByType image/jpeg                "access plus 6 months"
+  ExpiresByType image/png                 "access plus 6 months"
+  ExpiresByType image/svg+xml             "access plus 6 months"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  <FilesMatch "\.(woff2|woff|ttf)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  <FilesMatch "\.(mp4)$">
+    # permite streaming parcial (seek) — essencial para os vídeos do scroll
+    Header set Accept-Ranges "bytes"
+  </FilesMatch>
+</IfModule>
+
+# ---------- segurança básica ----------
+Options -Indexes
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# SPA/404: servir o index quando a pasta não existe
+ErrorDocument 404 /index.html

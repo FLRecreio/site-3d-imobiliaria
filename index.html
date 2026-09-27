@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Costa Dourada — Site 3D Imobiliário | Recreio.ai</title>
+<meta name="description" content="Demonstração de site 3D cinematográfico para construtoras, imobiliárias e corretores. Tour imersivo, automação de vendas no WhatsApp e captação de leads qualificados. Um produto Recreio.ai.">
+<meta name="theme-color" content="#05070B">
+<!-- pré-visualização em WhatsApp / redes — trocar EXEMPLO pelo domínio comprado -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Recreio.ai">
+<meta property="og:title" content="Costa Dourada — Site 3D Imobiliário">
+<meta property="og:description" content="Tour 3D guiado pelo scroll, automação de WhatsApp e captação de leads. Veja a amostra a funcionar e peça o seu.">
+<meta property="og:image" content="https://EXEMPLO.com.br/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mansão de alto padrão vista numa tela de site 3D">
+<meta property="og:url" content="https://EXEMPLO.com.br/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Costa Dourada — Site 3D Imobiliário">
+<meta name="twitter:description" content="Tour 3D guiado pelo scroll, automação de WhatsApp e captação de leads.">
+<meta name="twitter:image" content="https://EXEMPLO.com.br/assets/img/og.jpg">
+<link rel="canonical" href="https://EXEMPLO.com.br/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2305070B'/%3E%3Cpath d='M6 17.5 16 8l10 9.5' fill='none' stroke='%23C9A96A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='10.5' y='16' width='11' height='9' rx='1.6' fill='%23C9A96A'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/Fraunces-300v700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/IBMPlexSans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <div class="loader__mark">RECREIO<span>.ai</span></div>
+    <div class="loader__bar"><i id="loaderFill"></i></div>
+    <div class="loader__label"><span id="loaderPct">0</span>% — a carregar a experiência 3D</div>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#topo" aria-label="Costa Dourada — início">
+    <span class="nav__glyph" aria-hidden="true"></span>
+    <span class="nav__name">Costa Dourada</span>
+  </a>
+
+  <nav class="nav__links" id="navLinks" aria-label="Navegação principal">
+    <a href="#act1">Experiência</a>
+    <a href="#galeria">Imóveis</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#processo">Como funciona</a>
+    <a href="#pacotes">Planos</a>
+  </nav>
+
+  <a class="btn btn--sm nav__cta" href="#contato">Quero este site</a>
+
+  <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span>
+  </button>
+</header>
+
+<!-- ============ FILM RAIL (assinatura) ============ -->
+<aside class="rail" id="rail" aria-hidden="true">
+  <span class="rail__rule"></span>
+  <ol class="rail__list">
+    <li class="rail__item" data-scene="1"><i></i><b>01</b><em>Exterior</em></li>
+    <li class="rail__item" data-scene="2"><i></i><b>02</b><em>Saguão</em></li>
+    <li class="rail__item" data-scene="3"><i></i><b>03</b><em>O mar</em></li>
+    <li class="rail__item" data-scene="4"><i></i><b>04</b><em>A saída</em></li>
+  </ol>
+</aside>
+
+<main id="topo">
+
+<!-- ============================ ATO 1 — vídeos 1 e 2 ============================ -->
+<section class="act" id="act1" data-act="1" aria-label="Ato 1 — aproximação e saguão">
+  <div class="act__stage">
+    <div class="stage__media">
+      <video class="stage__v is-on" id="v1" src="videos/camara-aproxima-mansao.mp4"
+             muted playsinline loop preload="auto" disablepictureinpicture aria-hidden="true"></video>
+      <video class="stage__v" id="v2" src="videos/camara-avancando-saguao.mp4"
+             muted playsinline loop preload="auto" disablepictureinpicture aria-hidden="true"></video>
+      <div class="stage__scrim"></div>
+      <div class="stage__grain" aria-hidden="true"></div>
+    </div>
+
+    <div class="stage__copy">
+      <article class="beat is-live" data-beat="0">
+        <p class="eyebrow"><span>01</span> Exterior — a aproximação</p>
+        <h1 class="display">O imóvel que vende<br><em>antes da visita.</em></h1>
+        <p class="lede">Tour 3D cinematográfico para construtoras e imobiliárias que disputam o cliente de alto padrão. A rolagem do mouse conduz a câmera.</p>
+        <div class="beat__actions">
+          <a class="btn" href="#galeria">Ver os imóveis</a>
+          <a class="btn btn--ghost" href="#contato">Falar com a Recreio.ai</a>
+        </div>
+      </article>
+
+      <article class="beat" data-beat="1">
+        <p class="eyebrow"><span>02</span> Saguão — a entrada</p>
+        <h2 class="display">Cada metro quadrado<br><em>trabalha pela venda.</em></h2>
+        <ul class="ticks">
+          <li>Vídeo 4K em tela cheia, sem travar no celular</li>
+          <li>Transição contínua entre cenas, guiada pelo scroll</li>
+          <li>Ficha técnica, financiamento e visita no mesmo toque</li>
+        </ul>
+        <div class="beat__actions">
+          <a class="btn" href="#servicos">O que dá para agregar</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="stage__hud" aria-hidden="true">
+      <span class="hud__scene" id="hudScene">01 / Exterior</span>
+      <span class="hud__track"><i id="hudFill"></i></span>
+      <span class="hud__note">role para avançar</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ INTERLÚDIO ============================ -->
+<section class="interlude" aria-label="Resultados">
+  <div class="wrap">
+    <p class="interlude__lead reveal">O que muda quando o imóvel é apresentado assim:</p>
+    <ul class="stats">
+      <li class="reveal"><b class="num" data-to="3.4" data-dec="1" data-suffix="×">0</b><span>mais pedidos de visita agendada</span></li>
+      <li class="reveal"><b class="num" data-to="30" data-suffix=" s">0</b><span>para o primeiro retorno no WhatsApp</span></li>
+      <li class="reveal"><b class="num" data-to="7">0</b><span>dias do briefing ao site no ar</span></li>
+      <li class="reveal"><b class="num" data-to="100" data-suffix="%">0</b><span>dos imóveis com tour 3D e planta</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ AT0 2 — vídeos 3 e 4 ============================ -->
+<section class="act" id="act2" data-act="2" aria-label="Ato 2 — o mar e a saída">
+  <div class="act__stage">
+    <div class="stage__media">
+      <video class="stage__v is-on" id="v3" src="videos/camara-desliza-mar.mp4"
+             muted playsinline loop preload="auto" disablepictureinpicture aria-hidden="true"></video>
+      <video class="stage__v" id="v4" src="videos/camara-saindo-mansao.mp4"
+             muted playsinline loop preload="auto" disablepictureinpicture aria-hidden="true"></video>
+      <div class="stage__scrim"></div>
+      <div class="stage__grain" aria-hidden="true"></div>
+    </div>
+
+    <div class="stage__copy">
+      <article class="beat is-live" data-beat="0">
+        <p class="eyebrow"><span>03</span> A revelação — o mar</p>
+        <h2 class="display">A vista é o argumento.<br><em>Mostre-a primeiro.</em></h2>
+        <p class="lede">O comprador decide nos primeiros 12 segundos. Aqui o scroll abre a casa e entrega a melhor imagem do imóvel exatamente quando a atenção está no pico.</p>
+        <div class="beat__actions">
+          <a class="btn" href="#pacotes">Ver planos e preços</a>
+        </div>
+      </article>
+
+      <article class="beat" data-beat="1">
+        <p class="eyebrow"><span>04</span> O convite — a saída</p>
+        <h2 class="display">E quando o sonho acaba,<br><em>o contato começa.</em></h2>
+        <p class="lede">Botão de WhatsApp, formulário e agendamento de visita no ponto exato em que o cliente sente falta do imóvel.</p>
+        <div class="beat__actions">
+          <a class="btn" href="#contato">Quero isto para a minha imobiliária</a>
+          <a class="btn btn--ghost" href="https://wa.me/5521985516518" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="stage__hud" aria-hidden="true">
+      <span class="hud__scene" id="hudScene2">03 / O mar</span>
+      <span class="hud__track"><i id="hudFill2"></i></span>
+      <span class="hud__note">role para avançar</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ GALERIA (showroom) ============================ -->
+<section class="showroom" id="galeria">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="kicker">Vitrine</p>
+      <h2 class="head__title">Seis imóveis. <em>Um roteiro.</em></h2>
+      <p class="head__sub">Conteúdo de demonstração: o mesmo pacote entregue à sua imobiliária, com os seus imóveis, os seus preços e a sua marca.</p>
+    </header>
+
+    <div class="grid grid--3">
+      <article class="card reveal">
+        <div class="card__media"><video src="videos/camara-aproxima-mansao.mp4#t=2.4" muted playsinline loop preload="metadata"></video><span class="card__tag">Novo</span></div>
+        <div class="card__body">
+          <p class="card__place">Angra dos Reis · RJ</p>
+          <h3 class="card__name">Residência Maré Alta</h3>
+          <p class="card__price">R$ 18.900.000</p>
+          <dl class="specs"><div><dt>Área</dt><dd>780 m²</dd></div><div><dt>Suítes</dt><dd>6</dd></div><div><dt>Vagas</dt><dd>8</dd></div></dl>
+          <a class="card__link" href="#contato">Agendar visita<span aria-hidden="true"> →</span></a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__media"><video src="videos/camara-desliza-mar.mp4#t=3.1" muted playsinline loop preload="metadata"></video><span class="card__tag card__tag--alt">Frente-mar</span></div>
+        <div class="card__body">
+          <p class="card__place">Balneário Camboriú · SC</p>
+          <h3 class="card__name">Villa Costa Dourada</h3>
+          <p class="card__price">R$ 12.400.000</p>
+          <dl class="specs"><div><dt>Área</dt><dd>540 m²</dd></div><div><dt>Suítes</dt><dd>4</dd></div><div><dt>Vagas</dt><dd>6</dd></div></dl>
+          <a class="card__link" href="#contato">Agendar visita<span aria-hidden="true"> →</span></a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__media"><video src="videos/camara-avancando-saguao.mp4#t=2.0" muted playsinline loop preload="metadata"></video></div>
+        <div class="card__body">
+          <p class="card__place">Trancoso · BA</p>
+          <h3 class="card__name">Casa Horizonte</h3>
+          <p class="card__price">R$ 9.750.000</p>
+          <dl class="specs"><div><dt>Área</dt><dd>460 m²</dd></div><div><dt>Suítes</dt><dd>4</dd></div><div><dt>Vagas</dt><dd>4</dd></div></dl>
+          <a class="card__link" href="#contato">Agendar visita<span aria-hidden="true"> →</span></a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__media"><video src="videos/camara-saindo-mansao.mp4#t=1.6" muted playsinline loop preload="metadata"></video></div>
+        <div class="card__body">
+          <p class="card__place">São Conrado · RJ</p>
+          <h3 class="card__name">Cobalto Penthouse</h3>
+          <p class="card__price">R$ 7.200.000</p>
+          <dl class="specs"><div><dt>Área</dt><dd>320 m²</dd></div><div><dt>Suítes</dt><dd>3</dd></div><div><dt>Vagas</dt><dd>4</dd></div></dl>
+          <a class="card__link" href="#contato">Agendar visita<span aria-hidden="true"> →</span></a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__media"><video src="videos/camara-aproxima-mansao.mp4#t=6.0" muted playsinline loop preload="metadata"></video></div>
+        <div class="card__body">
+          <p class="card__place">Petrópolis · RJ</p>
+          <h3 class="card__name">Chalé Serra do Mar</h3>
+          <p class="card__price">R$ 4.350.000</p>
+          <dl class="specs"><div><dt>Área</dt><dd>380 m²</dd></div><div><dt>Suítes</dt><dd>3</dd></div><div><dt>Vagas</dt><dd>3</dd></div></dl>
+          <a class="card__link" href="#contato">Agendar visita<span aria-hidden="true"> →</span></a>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__media"><video src="videos/camara-desliza-mar.mp4#t=6.5" muted playsinline loop preload="metadata"></video><span class="card__tag">Oportunidade</span></div>
+        <div class="card__body">
+          <p class="card__place">Armação de Búzios · RJ</p>
+          <h3 class="card__name">Flat Beira-Mar 1201</h3>
+          <p class="card__price">R$ 2.980.000</p>
+          <dl class="specs"><div><dt>Área</dt><dd>145 m²</dd></div><div><dt>Suítes</dt><dd>2</dd></div><div><dt>Vagas</dt><dd>2</dd></div></dl>
+          <a class="card__link" href="#contato">Agendar visita<span aria-hidden="true"> →</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVIÇOS ============================ -->
+<section class="showroom showroom--tint" id="servicos">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="kicker">Serviços agregados</p>
+      <h2 class="head__title">O site é o começo.<br><em>O que vem depois é que vende.</em></h2>
+      <p class="head__sub">Cada módulo abaixo entra como item avulso ou dentro do pacote — a decisão é sua, e o preço é fechado antes do primeiro pixel.</p>
+    </header>
+
+    <div class="grid grid--3 srv">
+      <article class="srv__item reveal">
+        <span class="srv__ico" aria-hidden="true">W</span>
+        <h3>Automação de vendas no WhatsApp</h3>
+        <p>Responde em segundos, envia o portfólio certo, qualifica o orçamento e agenda a visita direto na agenda do corretor.</p>
+        <span class="srv__meta">mais pedido</span>
+      </article>
+      <article class="srv__item reveal">
+        <span class="srv__ico" aria-hidden="true">◎</span>
+        <h3>Captura de leads qualificados</h3>
+        <p>Formulários com perguntas de intenção, integração com anúncios e um filtro que separa quem só curtiu de quem quer comprar.</p>
+      </article>
+      <article class="srv__item reveal">
+        <span class="srv__ico" aria-hidden="true">▤</span>
+        <h3>CRM de imobiliária</h3>
+        <p>Cada lead, cada visita e cada proposta num painel só — com histórico, lembrete e alerta de follow-up.</p>
+      </article>
+      <article class="srv__item reveal">
+        <span class="srv__ico" aria-hidden="true">✦</span>
+        <h3>Chatbot 24/7</h3>
+        <p>Responde planta, financiamento, condição de pagamento e disponibilidade enquanto o seu time dorme.</p>
+      </article>
+      <article class="srv__item reveal">
+        <span class="srv__ico" aria-hidden="true">↗</span>
+        <h3>SEO local e Google Meu Negócio</h3>
+        <p>Aparece quando alguém digita “casa à venda em…” na sua praça, com fichas de imóvel indexadas.</p>
+        <span class="srv__meta">recorrente</span>
+      </article>
+      <article class="srv__item reveal">
+        <span class="srv__ico" aria-hidden="true">◇</span>
+        <h3>Tour 360° e realidade virtual</h3>
+        <p>O comprador percorre o imóvel no celular ou no visor, sem sair de casa, antes de marcar a visita.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PROCESSO ============================ -->
+<section class="showroom" id="processo">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="kicker">Como funciona</p>
+      <h2 class="head__title">Três passos. <em>Sete dias.</em></h2>
+    </header>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step__n">01</span>
+        <div>
+          <h3>Briefing de 30 minutos</h3>
+          <p>Você mostra os imóveis, o público e o que já tentou. A gente desenha a experiência e aprova o roteiro com você.</p>
+        </div>
+      </li>
+      <li class="step reveal">
+        <span class="step__n">02</span>
+        <div>
+          <h3>Produção 3D e conteúdo</h3>
+          <p>Vídeos, fotos, textos, fichas técnicas e plantas. A sua marca aplicada em toda a peça, sem templates genéricos.</p>
+        </div>
+      </li>
+      <li class="step reveal">
+        <span class="step__n">03</span>
+        <div>
+          <h3>No ar e treinado</h3>
+          <p>Deploy, WhatsApp conectado, painel de leads configurado e o seu time treinado em uma sessão de 45 minutos.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ PACOTES ============================ -->
+<section class="showroom showroom--tint" id="pacotes">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="kicker">Planos</p>
+      <h2 class="head__title">Preço fechado.<br><em>Surpresa zero.</em></h2>
+      <p class="head__sub">Valores de referência para o pacote de demonstração. O orçamento final sai do briefing e vale por 30 dias.</p>
+    </header>
+
+    <div class="plans">
+      <article class="plan reveal">
+        <h3 class="plan__name">Essencial</h3>
+        <p class="plan__price">R$ 2.980</p>
+        <p class="plan__note">pagamento único</p>
+        <ul class="plan__list">
+          <li>Site de página única responsivo</li>
+          <li>Até 6 imóveis com ficha técnica</li>
+          <li>Botão de WhatsApp com pré-texto</li>
+          <li>Domínio .com.br no primeiro ano</li>
+          <li>Entrega em 7 dias</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="#contato">Começar pelo Essencial</a>
+      </article>
+
+      <article class="plan plan--featured reveal">
+        <span class="plan__flag">mais escolhido</span>
+        <h3 class="plan__name">Premium</h3>
+        <p class="plan__price">R$ 5.980</p>
+        <p class="plan__note">ou 6× de R$ 1.047</p>
+        <ul class="plan__list">
+          <li>Tudo do Essencial</li>
+          <li>Tour 3D cinematográfico com vídeos seus</li>
+          <li>Automação de vendas no WhatsApp</li>
+          <li>Captura e qualificação de leads</li>
+          <li>SEO local + Google Meu Negócio</li>
+          <li>Até 24 imóveis</li>
+        </ul>
+        <a class="btn btn--block" href="#contato">Quero o Premium</a>
+      </article>
+
+      <article class="plan reveal">
+        <h3 class="plan__name">Completo</h3>
+        <p class="plan__price">R$ 9.980</p>
+        <p class="plan__note">ou 10× de R$ 1.082</p>
+        <ul class="plan__list">
+          <li>Tudo do Premium</li>
+          <li>CRM com painel de gestão</li>
+          <li>Chatbot 24/7 no site e no WhatsApp</li>
+          <li>Gestão de campanhas de captação</li>
+          <li>Imóveis ilimitados</li>
+          <li>6 meses de suporte e ajustes</li>
+        </ul>
+        <a class="btn btn--ghost btn--block" href="#contato">Falar sobre o Completo</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA FINAL ============================ -->
+<section class="close" id="contato">
+  <div class="wrap close__grid">
+    <div class="close__pitch reveal">
+      <p class="kicker kicker--gold">Próximo passo</p>
+      <h2 class="display">Leve esta experiência<br><em>para o seu inventário.</em></h2>
+      <p class="lede">Diga quantos imóveis vocês têm e em que prazo querem estar no ar. Resposta em até 30 minutos no horário comercial.</p>
+
+      <a class="btn btn--lg" href="https://wa.me/5521985516518?text=Ol%C3%A1!%20Vi%20a%20demonstra%C3%A7%C3%A3o%20do%20site%203D%20e%20quero%20um%20assim%20para%20a%20minha%20imobili%C3%A1ria."
+         target="_blank" rel="noopener">Chamar no WhatsApp</a>
+
+      <dl class="close__facts">
+        <div><dt>Entrega</dt><dd>7 dias</dd></div>
+        <div><dt>Suporte</dt><dd>6 meses</dd></div>
+        <div><dt>Revisão</dt><dd>ilimitada na 1ª semana</dd></div>
+      </dl>
+    </div>
+
+    <form class="form reveal" id="briefing" novalidate>
+      <p class="form__title">Pedir orçamento</p>
+
+      <label class="field">
+        <span>Nome</span>
+        <input type="text" name="nome" autocomplete="name" required placeholder="Como te chamamos?">
+      </label>
+
+      <label class="field">
+        <span>Imobiliária ou construtora</span>
+        <input type="text" name="empresa" autocomplete="organization" required placeholder="Nome da empresa">
+      </label>
+
+      <label class="field">
+        <span>WhatsApp</span>
+        <input type="tel" name="whatsapp" autocomplete="tel" required placeholder="(00) 00000-0000" inputmode="tel">
+      </label>
+
+      <label class="field">
+        <span>O que você precisa</span>
+        <textarea name="mensagem" rows="3" placeholder="Ex.: 18 imóveis, tour 3D e automação de WhatsApp"></textarea>
+      </label>
+
+      <button class="btn btn--block btn--lg" type="submit">Enviar briefing</button>
+      <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="foot__mark">RECREIO<span>.ai</span></p>
+      <p class="foot__tag">Agência digital. Sites, automação e captação para quem vende imóveis.</p>
+    </div>
+    <nav aria-label="Rodapé">
+      <a href="#act1">Experiência</a>
+      <a href="#galeria">Imóveis</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#pacotes">Planos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <p class="foot__legal">
+      Peça de demonstração comercial. Imóveis, preços e métricas são fictícios.<br>
+      © <span id="ano">2026</span> Recreio.ai — todos os direitos reservados.
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
